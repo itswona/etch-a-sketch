@@ -31,15 +31,18 @@ function trail (querySelector) {
 const buttons = document.createElement("div");
 const btnPrompt = document.createElement("button");
 const btnReload = document.createElement("button");
+const btnPen = document.createElement("button");
 
 btnPrompt.setAttribute("class", "buttons");
 btnReload.setAttribute("class", "buttons");
+btnPen.setAttribute("class", "buttons");
 buttons.setAttribute("class", "selection");
 buttons.append(btnPrompt, btnReload);
 body.appendChild(buttons);
 
 btnPrompt.textContent = "Start";
 btnReload.textContent = "Reload";
+btnPen.textContent = "Kaleidoscope";
 
 btnReload.addEventListener("click", () => {
     window.location.reload();
@@ -55,5 +58,8 @@ btnPrompt.addEventListener("click", () => {
     }
 });
 
+btnPen.addEventListener("click", () => {
+    
+});
 // add kaleidoscope
 // color palette: rgb(41,52,107) rgb(255,158,38) rgb(186,193,229) rgb(171,11,59) rgb(0,150,116)
