@@ -52,8 +52,8 @@ btnPrompt.addEventListener("click", () => {
     let dimension = prompt("Set dimensions (1-100):");
     if (dimension >= 1 && dimension <= 100) {
         createNumberOfSquares(dimension);
+        btnPrompt.disabled = true;
     } else {
         alert("Try again with numbers from 1 to 100.");
     }
-    btnPrompt.disabled = true;
 });
