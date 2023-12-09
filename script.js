@@ -14,18 +14,16 @@ body.appendChild(container);
 // columnPad.setAttribute("id", "column");
 
 // change row-squares and column-squares to squares afterwards
-function createNumberOfSquares (number) {
+function createNumberOfDivs (number) {
     for (let i = 0; i < number; i++) {
         const row = document.createElement("div");
-        row.classList.add("row-squares")
-        rowPad.appendChild(row);
-        pad.appendChild(rowPad);
-    }
-    for (let i = 0; i < number; i++) {
-        const column = document.createElement("div");
-        column.classList.add("column-squares");
-        columnPad.appendChild(column);
-        pad.appendChild(columnPad);
+        row.setAttribute("class", "row-squares")
+        pad.appendChild(row);
+        for (let j = 0; j < number; j++) {
+            const column = document.createElement("div");
+            column.setAttribute("class", "column-squares");
+            row.appendChild(column);
+        }
     }
 }
-// createNumberOfSquares(16);
+createNumberOfDivs(16);
