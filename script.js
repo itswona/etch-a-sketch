@@ -46,10 +46,10 @@ btnReload.addEventListener("click", () => {
 });
 
 btnPrompt.addEventListener("click", () => {
-    let dimension = prompt("Set dimensions (1-100):", createNumberOfSquares(16));
-    if (dimension === Number && dimension >= 1 && dimension <= 100) {
-
+    let dimension = prompt("Set dimensions (1-100):");
+    if (dimension >= 1 && dimension <= 100) {
+        createNumberOfSquares(dimension);
     } else {
-        alert("Please input numbers from 1 to 100 only.");
+        alert("Try again with numbers from 1 to 100.");
     }
 });
