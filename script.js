@@ -11,11 +11,11 @@ body.appendChild(container);
 function createNumberOfSquares (number) {
     for (let i = 0; i < number; i++) {
         const row = document.createElement("div");
-        row.setAttribute("class", "row-squares")
+        row.setAttribute("class", "rows")
         pad.appendChild(row);
         for (let j = 0; j < number; j++) {
             const column = document.createElement("div");
-            column.setAttribute("class", "column-squares");
+            column.setAttribute("class", "squares");
             row.appendChild(column);
         }
     }

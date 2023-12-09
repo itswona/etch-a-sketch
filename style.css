@@ -31,20 +31,20 @@ body {
 #pad {
     display: flex;
     flex: auto;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     min-width: 500px;
     min-height: 500px;
     padding: 20px;
     background-color: whitesmoke;
 }
-.row-squares {
+.rows {
     display: flex;
     flex: auto;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     border: solid 1px black;
     background-color: blueviolet;
 }
-.column-squares {
+.squares {
     display: flex;
     flex: auto;
     max-height: 50%;
