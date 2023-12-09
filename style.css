@@ -31,36 +31,23 @@ body {
 #pad {
     display: flex;
     flex: auto;
+    flex-flow: row wrap;
     min-width: 500px;
     min-height: 500px;
     padding: 20px;
     background-color: whitesmoke;
 }
-/* #row {
-    display: flex;
-    flex: auto;
-    flex-flow: row wrap;
-    background-color: brown;
-} */
 .row-squares {
     display: flex;
     flex: auto;
-    flex-flow: row wrap;
-    height: 10px;
+    flex-flow: column wrap;
     border: solid 1px black;
     background-color: blueviolet;
 }
-/* #column {
-    display: flex;
-    flex: auto;
-    flex-flow: column wrap;
-    background-color: aqua;
-} */
 .column-squares {
     display: flex;
     flex: auto;
-    flex-flow: column wrap;
-    height: 10px;
+    max-height: 50%;
     border: solid 1px black;
     background-color: greenyellow;
 }
