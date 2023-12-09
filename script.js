@@ -22,10 +22,29 @@ function createNumberOfSquares (number) {
     }
 }
 
-createNumberOfSquares(16);
-
 function trail (querySelector) {
     querySelector.addEventListener("mouseover", () => {
         querySelector.setAttribute("style", "background-color: black;");
     });
 }
+
+const buttons = document.createElement("div");
+const btnPrompt = document.createElement("button");
+const btnReload = document.createElement("button");
+
+btnPrompt.setAttribute("class", "buttons");
+btnReload.setAttribute("class", "buttons");
+buttons.setAttribute("class", "selection");
+buttons.append(btnPrompt, btnReload);
+body.appendChild(buttons);
+
+btnPrompt.textContent = "Prompt";
+btnReload.textContent = "Reload";
+
+btnReload.addEventListener("click", () => {
+    window.location.reload();
+});
+
+// btnPrompt.addEventListener("click", () => {
+//     prompt("Number dimensions", createNumberOfSquares(16));
+// });
