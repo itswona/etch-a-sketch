@@ -17,8 +17,15 @@ function createNumberOfSquares (number) {
             const squares = document.createElement("div");
             squares.setAttribute("class", "squares");
             rows.appendChild(squares);
+            trail(squares);
         }
     }
 }
 
 createNumberOfSquares(16);
+
+function trail (querySelector) {
+    querySelector.addEventListener("mouseover", () => {
+        querySelector.setAttribute("style", "background-color: black;");
+    });
+}
