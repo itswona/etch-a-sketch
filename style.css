@@ -12,26 +12,55 @@ html {
     box-sizing: inherit;
 }
 body {
-    margin: 0;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgb(50, 50, 50);
 }
 .container {
     display: flex;
-
     justify-content: center;
     align-items: center;
-    padding: 50px;
     width: 50%;
     height: 50%;
-    background-color: pink;
+    padding: 50px;
+    background-color: orange;
 }
-.grid-squares {
+#pad {
+    display: flex;
+    flex: auto;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+/* #row {
+    display: flex;
+    flex: auto;
+    flex-flow: row wrap;
+    background-color: brown;
+}
+.row-squares {
+    display: flex;
+    flex: auto;
     border: solid 1px black;
     background-color: blueviolet;
     width: 50px;
     height: 50px;
-    flex: auto;
 }
+#column {
+    display: flex;
+    flex: auto;
+    flex-flow: column wrap;
+    background-color: aqua;
+}
+.column-squares {
+    display: flex;
+    flex: auto;
+    border: solid 1px black;
+    background-color: greenyellow;
+    width: 50px;
+    height: 50px;
+} */
