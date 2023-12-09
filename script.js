@@ -38,13 +38,18 @@ buttons.setAttribute("class", "selection");
 buttons.append(btnPrompt, btnReload);
 body.appendChild(buttons);
 
-btnPrompt.textContent = "Prompt";
+btnPrompt.textContent = "Start";
 btnReload.textContent = "Reload";
 
 btnReload.addEventListener("click", () => {
     window.location.reload();
 });
 
-// btnPrompt.addEventListener("click", () => {
-//     prompt("Number dimensions", createNumberOfSquares(16));
-// });
+btnPrompt.addEventListener("click", () => {
+    let dimension = prompt("Set dimensions (1-100):", createNumberOfSquares(16));
+    if (dimension === Number && dimension >= 1 && dimension <= 100) {
+
+    } else {
+        alert("Please input numbers from 1 to 100 only.");
+    }
+});
