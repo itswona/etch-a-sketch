@@ -10,14 +10,15 @@ body.appendChild(container);
 
 function createNumberOfSquares (number) {
     for (let i = 0; i < number; i++) {
-        const row = document.createElement("div");
-        row.setAttribute("class", "rows")
-        pad.appendChild(row);
+        const rows = document.createElement("div");
+        rows.setAttribute("class", "rows")
+        pad.appendChild(rows);
         for (let j = 0; j < number; j++) {
-            const column = document.createElement("div");
-            column.setAttribute("class", "squares");
-            row.appendChild(column);
+            const squares = document.createElement("div");
+            squares.setAttribute("class", "squares");
+            rows.appendChild(squares);
         }
     }
 }
+
 createNumberOfSquares(16);
