@@ -55,4 +55,5 @@ btnPrompt.addEventListener("click", () => {
     } else {
         alert("Try again with numbers from 1 to 100.");
     }
+    btnPrompt.disabled = true;
 });
