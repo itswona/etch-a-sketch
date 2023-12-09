@@ -8,13 +8,7 @@ container.setAttribute("class", "container");
 container.appendChild(pad);
 body.appendChild(container);
 
-// const rowPad = document.createElement("div");
-// const columnPad = document.createElement("div");
-// rowPad.setAttribute("id", "row");
-// columnPad.setAttribute("id", "column");
-
-// change row-squares and column-squares to squares afterwards
-function createNumberOfDivs (number) {
+function createNumberOfSquares (number) {
     for (let i = 0; i < number; i++) {
         const row = document.createElement("div");
         row.setAttribute("class", "row-squares")
@@ -26,4 +20,4 @@ function createNumberOfDivs (number) {
         }
     }
 }
-createNumberOfDivs(16);
+createNumberOfSquares(16);
