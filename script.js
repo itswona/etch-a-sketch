@@ -52,14 +52,7 @@ btnPrompt.addEventListener("click", () => {
     let dimension = prompt("Set dimensions (1-100):");
     if (dimension >= 1 && dimension <= 100) {
         createNumberOfSquares(dimension);
-        btnPrompt.disabled = true;
     } else {
         alert("Try again with numbers from 1 to 100.");
     }
 });
-
-btnPen.addEventListener("click", () => {
-    
-});
-// add kaleidoscope
-// color palette: rgb(41,52,107) rgb(255,158,38) rgb(186,193,229) rgb(171,11,59) rgb(0,150,116)
