@@ -37,7 +37,7 @@ btnPrompt.setAttribute("class", "buttons");
 btnReload.setAttribute("class", "buttons");
 btnPen.setAttribute("class", "buttons");
 buttons.setAttribute("class", "selection");
-buttons.append(btnPrompt, btnReload);
+buttons.append(btnPrompt, btnReload, btnPen);
 body.appendChild(buttons);
 
 btnPrompt.textContent = "Start";
