@@ -11,18 +11,21 @@ body.appendChild(container);
 const buttons = document.createElement("div");
 const btnPrompt = document.createElement("button");
 const btnReload = document.createElement("button");
-const btnPen = document.createElement("button");
+const btnPenNormal = document.createElement("button");
+const btnPenKaleidoscope = document.createElement("button");
 
 btnPrompt.setAttribute("class", "buttons");
 btnReload.setAttribute("class", "buttons");
-btnPen.setAttribute("class", "buttons");
+btnPenNormal.setAttribute("class", "buttons");
+btnPenKaleidoscope.setAttribute("class", "buttons");
 buttons.setAttribute("class", "selection");
-buttons.append(btnPrompt, btnReload, btnPen);
+buttons.append(btnPrompt, btnReload, btnPenNormal, btnPenKaleidoscope);
 body.appendChild(buttons);
 
 btnPrompt.textContent = "Start";
 btnReload.textContent = "Reload";
-btnPen.textContent = "Kaleidoscope";
+btnPenNormal.textContent = "Black";
+btnPenKaleidoscope.textContent = "Kaleidoscope";
 
 btnReload.addEventListener("click", () => {
     window.location.reload();
@@ -33,14 +36,15 @@ btnPrompt.addEventListener("click", () => {
     if (dimension >= 1 && dimension <= 100) {
         createNumberOfSquares(dimension);
         btnPrompt.disabled = true;
+        btnPenNormal.disabled = false;
+        btnPenKaleidoscope.disabled = false;
     } else {
         alert("Try again with numbers from 1 to 100.");
     }
 });
 
-btnPen.addEventListener("click", () => {
-    console.log("clicked");
-});
+btnPenNormal.disabled = true;
+btnPenKaleidoscope.disabled = true;
 
 function createNumberOfSquares (number) {
     for (let i = 0; i < number; i++) {
@@ -51,7 +55,16 @@ function createNumberOfSquares (number) {
             const squares = document.createElement("div");
             squares.setAttribute("class", "squares");
             rows.appendChild(squares);
-            blackTrail(squares);
+            btnPenNormal.addEventListener("click", () => {
+                blackTrail(squares);
+                btnPenNormal.setAttribute("style", "background-color: rgba(255, 166, 0, 0.682)");
+                btnPenKaleidoscope.setAttribute("style", "background-color: orange");
+            });
+            btnPenKaleidoscope.addEventListener("click", () => {
+                kaleidoscopeTrail(squares);
+                btnPenKaleidoscope.setAttribute("style", "background-color: rgba(255, 166, 0, 0.682)");
+                btnPenNormal.setAttribute("style", "background-color: orange");
+            });
         }
     }
 }
@@ -62,7 +75,7 @@ function blackTrail (querySelector) {
     });
 }
 
-function KaleidoscopeTrail (querySelector) {
+function kaleidoscopeTrail (querySelector) {
     const colors = ["rgb(41,52,107)", "rgb(255,158,38)", "rgb(186,193,229)", "rgb(171,11,59)", "rgb(0,150,116)"];
     const randomizeColors = colors[Math.floor(Math.random() * colors.length)];
     querySelector.addEventListener("mouseover", () => {
