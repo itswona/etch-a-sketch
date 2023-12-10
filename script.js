@@ -8,26 +8,6 @@ container.setAttribute("class", "container");
 container.appendChild(pad);
 body.appendChild(container);
 
-function createNumberOfSquares (number) {
-    for (let i = 0; i < number; i++) {
-        const rows = document.createElement("div");
-        rows.setAttribute("class", "rows")
-        pad.appendChild(rows);
-        for (let j = 0; j < number; j++) {
-            const squares = document.createElement("div");
-            squares.setAttribute("class", "squares");
-            rows.appendChild(squares);
-            trail(squares);
-        }
-    }
-}
-
-function trail (querySelector) {
-    querySelector.addEventListener("mouseover", () => {
-        querySelector.setAttribute("style", "background-color: black;");
-    });
-}
-
 const buttons = document.createElement("div");
 const btnPrompt = document.createElement("button");
 const btnReload = document.createElement("button");
@@ -57,3 +37,35 @@ btnPrompt.addEventListener("click", () => {
         alert("Try again with numbers from 1 to 100.");
     }
 });
+
+btnPen.addEventListener("click", () => {
+    console.log("clicked");
+});
+
+function createNumberOfSquares (number) {
+    for (let i = 0; i < number; i++) {
+        const rows = document.createElement("div");
+        rows.setAttribute("class", "rows")
+        pad.appendChild(rows);
+        for (let j = 0; j < number; j++) {
+            const squares = document.createElement("div");
+            squares.setAttribute("class", "squares");
+            rows.appendChild(squares);
+            blackTrail(squares);
+        }
+    }
+}
+
+function blackTrail (querySelector) {
+    querySelector.addEventListener("mouseover", () => {
+        querySelector.setAttribute("style", "background-color: black;");
+    });
+}
+
+function KaleidoscopeTrail (querySelector) {
+    const colors = ["rgb(41,52,107)", "rgb(255,158,38)", "rgb(186,193,229)", "rgb(171,11,59)", "rgb(0,150,116)"];
+    const randomizeColors = colors[Math.floor(Math.random() * colors.length)];
+    querySelector.addEventListener("mouseover", () => {
+        querySelector.setAttribute("style", `background-color: ${randomizeColors};`);
+    });
+}
