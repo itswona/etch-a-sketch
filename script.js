@@ -69,6 +69,13 @@ function createNumberOfSquares (number) {
     }
 }
 
+function shuffle (array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 function blackTrail (querySelector) {
     querySelector.addEventListener("mouseover", () => {
         querySelector.setAttribute("style", "background-color: black;");
@@ -77,8 +84,12 @@ function blackTrail (querySelector) {
 
 function kaleidoscopeTrail (querySelector) {
     const colors = ["rgb(41,52,107)", "rgb(255,158,38)", "rgb(186,193,229)", "rgb(171,11,59)", "rgb(0,150,116)"];
-    const randomizeColors = colors[Math.floor(Math.random() * colors.length)];
+    let shuffledColor = "";
+    for (let i = 0; i < colors.length; i++) {
+        shuffle(colors);
+        shuffledColor = colors[i];
+    }
     querySelector.addEventListener("mouseover", () => {
-        querySelector.setAttribute("style", `background-color: ${randomizeColors};`);
+        querySelector.setAttribute("style", `background-color: ${shuffledColor};`);
     });
 }
