@@ -24,7 +24,7 @@ body.appendChild(buttons);
 
 btnPrompt.textContent = "Start";
 btnReload.textContent = "Reload";
-btnPenNormal.textContent = "Black";
+btnPenNormal.textContent = "Dark";
 btnPenKaleidoscope.textContent = "Kaleidoscope";
 
 btnReload.addEventListener("click", () => {
@@ -71,7 +71,7 @@ function createNumberOfSquares (number) {
 
 function blackTrail (querySelector) {
     querySelector.addEventListener("mouseover", () => {
-        querySelector.setAttribute("style", "background-color: black;");
+        querySelector.setAttribute("style", "background-color: rgb(40, 40, 40);");
     });
 }
 

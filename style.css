@@ -1,69 +1,55 @@
 html {
-    font-size: 10px;
-    /* font from rel */
     font-family: "Open Sans", sans-serif;
-    /* alternative css box model */
     box-sizing: border-box;
   }
-  /* remove exception to fit image to the content */
-  *:not(img),
-  *::before,
-  *::after {
+*:not(img),
+*::before,
+*::after {
     box-sizing: inherit;
 }
-body {
+body, .container, #pad, .rows, .squares, .selection {
     display: flex;
+}
+body, .container {
     justify-content: center;
     align-items: center;
+}
+body, #pad, .rows, .squares {
+    flex: auto;
+}
+body, #pad {
     flex-flow: column wrap;
-    gap: 20px;
-    margin: 0;
-    min-height: 100vh;
+}
+body, .selection {
+    gap: 1em;
+}
+body {
     background-color: rgb(50, 50, 50);
 }
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 50%;
+.container, .squares {
     min-height: 50%;
-    padding: 30px;
+}
+.container, #pad, .buttons {
     border-radius: 7px;
+    padding: 10px;
+}
+.container, .buttons {
     background-color: orange;
+}
+.container {
+    min-width: 50%;
 }
 #pad {
-    display: flex;
-    flex: auto;
-    flex-flow: column wrap;
     min-width: 500px;
     min-height: 500px;
-    padding: 10px;
     background-color: rgb(90, 90, 90);
 }
-.rows {
-    display: flex;
-    flex: auto;
-    flex-flow: row wrap;
-    border: 1px rgb(49, 49, 49);
-    /* background-color: blueviolet; */
-}
 .squares {
-    display: flex;
-    flex: auto;
-    max-height: 50%;
-    border: solid 1px black;
+    border: 1px solid rgb(49, 49, 49);
     background-color: whitesmoke;
 }
-.selection {
-    display: flex;
-    gap: 10px;
-}
 .buttons {
-    background-color: orange;
-    padding: 20px;
-    font-size: large;
     border: none;
-    border-radius: 7px;
     min-width: 70px;
 }
 .buttons:nth-child(1) {
