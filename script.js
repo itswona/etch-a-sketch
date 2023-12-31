@@ -1,12 +1,8 @@
-const body = document.querySelector("body");
-const container = document.createElement("div");
+const container = document.querySelector(".container");
 const pad = document.createElement("div");
 
 pad.setAttribute("id", "pad");
-container.setAttribute("class", "container");
-
 container.appendChild(pad);
-body.appendChild(container);
 
 const buttons = document.createElement("div");
 const btnPrompt = document.createElement("button");
@@ -20,7 +16,7 @@ btnPenNormal.setAttribute("class", "buttons");
 btnPenKaleidoscope.setAttribute("class", "buttons");
 buttons.setAttribute("class", "selection");
 buttons.append(btnPrompt, btnReload, btnPenNormal, btnPenKaleidoscope);
-body.appendChild(buttons);
+container.appendChild(buttons);
 
 btnPrompt.textContent = "Start";
 btnReload.textContent = "Reload";
@@ -57,13 +53,13 @@ function createNumberOfSquares (number) {
             rows.appendChild(squares);
             btnPenNormal.addEventListener("click", () => {
                 blackTrail(squares);
-                btnPenNormal.setAttribute("style", "background-color: rgba(255, 166, 0, 0.682)");
-                btnPenKaleidoscope.setAttribute("style", "background-color: orange");
+                btnPenNormal.setAttribute("style", "background-color: #dc6c3a");
+                btnPenKaleidoscope.setAttribute("style", "background-color: #e48c65");
             });
             btnPenKaleidoscope.addEventListener("click", () => {
                 kaleidoscopeTrail(squares);
-                btnPenKaleidoscope.setAttribute("style", "background-color: rgba(255, 166, 0, 0.682)");
-                btnPenNormal.setAttribute("style", "background-color: orange");
+                btnPenKaleidoscope.setAttribute("style", "background-color: #dc6c3a");
+                btnPenNormal.setAttribute("style", "background-color: #e48c65");
             });
         }
     }
