@@ -27,6 +27,7 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: rgb(50, 50, 50);
+    overflow: auto;
 }
 .container, #pad, .buttons {
     border-radius: 7px;
